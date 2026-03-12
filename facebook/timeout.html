@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            height: 100vh;
+            background: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 60%;
+            height: 250px;
+            background-color: #fff;
+            box-shadow: 0 0 3px;
+        }
+
+        #timer{
+            width:100%;
+            font-size: 72px;
+            text-align: center;
+            margin:0px auto;
+            padding: 35px;
+
+
+        }
+
+    .buttons{
+        text-align:center;
+    }
+
+    button{
+        margin:0 10px;
+        border:none;
+    }
+
+button i{
+    font-size:2rem;
+    padding:10px;
+    color:#fff;
+width:50px;
+
+}
+
+#play{
+    background-color: green;
+}
+#reset{
+background-color: red;
+}
+#pause{
+    background-color:orange;
+}
+
+    </style>
+</head>
+<body>
+
+<div  class="container">
+<div id="timer">
+    00:00:00
+
+</div>
+
+
+<div class="buttons">
+
+<button id="startstopbtn">
+    <i class="fa-solid fa-play" id="play"></i>
+
+</button>
+
+<button id="resetbtn">
+    <i class="fa-solid fa-arrow-rotate-left" id="reset"></i>
+
+</button>
+</div>
+
+    </div>
+
+
+
+<script>
+
+//variable for button
+const startstopbtn = document.getElementById('#startstopbtn');
+const resetbtn = document.getElementById('#resetbtn');
+
+
+//variable for time value
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+
+//variable for leading zero
+let leadingSeconds = 0;
+let leadingMinutes = 0;
+let leadingHours = 0;
+
+
+//variable for set interval and timestatus 
+let timeInterval = null;
+let timerStart = "stopped";
+
+
+
+//stop watch function
+function stopwatch() {
+
+    seconds++
+    
+    if(seconds / 60 === 1){
+        seconds = 0;
+        minutes ++;
+
+        if(minutes / 60 ===1){
+            minutes = 0;
+            hours++
+        }
+    }
+
+    if(seconds < 10){
+        leadingSeconds = "0" + seconds.toString();
+
+    }else{
+        leadingSeconds = seconds;
+    }
+
+    
+    if(minutes < 10){
+        leadingMinutes = "0" + minutes.toString();
+
+    }else{
+        leadingMinutes = minutes;
+    }
+
+    
+    if(hours < 10){
+        leadingHours = "0" + hours.toString();
+
+    }else{
+        leadingHours = hours;
+    }
+    let displayTimer = document.getElementById('timer').innerText = 
+    leadingHours + ":" + leadingMinutes + ":" + leadingSeconds;
+
+}
+
+// window.setInterval(stopwatch, 1000)
+
+
+ startstopbtn.addEventListener('click', function(){
+      if(timerStatus === "stopped") {
+          timeInterval = window.setInterval(stopWatch, 1000);
+          document.getElementById('startstopbtn').innerHTML = '<i class="fa-solid fa-pause" id="pause"></i>';
+          timerStatus = "started";
+      }
+  else {
+     window.clearInterval(timeInterval);
+     document.getElementById('startstopbtn').innerHTML = `<i
+     class="fa-solid fa-play" id="play">`;
+ timerStatus = "stopped";
+
+  }
+ });
+
+ resetbtn.addEventListener('click', function(){
+     window.clearInterval(timerInterval);
+     seconds = 0;
+     minutes = 0;
+     hours = 0;
+
+     document.getElementById('timer').innerHTML = "00:00:00";
+
+ });
+
+</script>
+
+
+
+
+
+</body>
+</html>

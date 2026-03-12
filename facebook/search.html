@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#search-container{
+    width:100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+#searchlist{
+    list-style-type: none;
+    padding: 0;
+}
+
+#searchlist li{
+    padding: 10px;
+background-color:#fff;
+margin-bottom: 5px;
+border-radius: 4px;
+}
+
+#searchlist li.hidden{
+    display:none;
+
+}
+    
+</style>
+
+
+
+
+</head>
+<body>
+
+<div class="search-container">
+    <input type="text" id="searchinput" placeholder="search"> 
+</div>
+<ul id="searchlist">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+    <li>pear</li>
+    <li>grapes</li>
+    <li>pineapple</li>
+    <li>strawberry</li>
+    <li>kiwi</li>
+</ul>
+
+
+
+<!--
+<button onclick="alert('Saheed')">click</button>
+<button onmousemove="document.getElementById('demo').innerHTML=Date()">time</button>
+<p id="demo"></p>
+-->
+   
+
+<script>
+    document.getElementById('searchinput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let items = 
+        document.getElementById('searchlist').getElementsByTagName('li');
+        for (let i = 0; i < items.length; i++)
+        {
+            let item = items[i];
+            if
+            (item.textContent.toLowerCase().includes(filter))
+            {
+item.classlist.remove('hidden');
+            } else {
+                item.classlist.add('hidden');
+            }
+
+            }
+        
+    });
+</script>
+
+</body>
+</html>

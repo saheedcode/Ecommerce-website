@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>porto2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+
+body{
+    color:blue;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index:100;
+}
+.logo{
+    position: relative;
+    font-size: 25px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.logo{
+    color:blue;
+}
+.navbar a {
+    display: inline-block;
+    font-size:25px;
+    color:black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left:35px;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    background: #0ef;
+}
+
+.home{
+    position: relative;
+    width:100%;
+    justify-content: space-between;
+    height: 100vh;
+    background:url ("ade.jpg") no repeat;
+    background:cover;
+    background-position: center;
+    display:flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content{
+    max-width:600px;
+
+}
+
+.home-content h3{
+    font-size:32px;
+    font-weight: 700;
+}
+
+.home-content h1{
+    font-size:54px;
+    font-weight:700;
+    margin: -3px 0;
+}
+
+.home-content p{
+    font-size: 20px;
+
+}
+
+.home-sci a{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width:40px;
+height:40px;
+background: transparent;
+border:2px solid #0ef;
+border-radius: 50%;
+font-size: 20px;
+color:#0ef;
+text-decoration: none;
+margin:30px 15px 10px 0;
+}
+
+.home-sci a:hover{
+    background: #0ef;
+    color:#081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box{
+    display:inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color:#081b39;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan
+
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+    <header class="header">
+    <a href="#" class="logo">
+Porfolio
+    <a>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">about</a>
+    <a href="#">Skill</a>
+    <a href="#">Porfolio</a>
+    <a href="#">Contact</a>
+
+</div>
+
+</header>
+
+<section class="home">
+    <div class="home-contact">
+    <h3>Hello, It's Me</h3>
+    <h1>SAMOTU SAHEED</h1>
+    <h3>And i'm a <span class="text"></span></h3>
+    <p>I'm a Web Developer with extensive experience for over 3 years.</p><br>expertise is to
+        create and website design,frontend design,and Ui/Ux design and many more.....
+    </br>
+
+    <div class="home-sci">
+        <a href="#"> <i class="fab fa-facebook"></i> </a>
+        <a href="#"><i   class="fab fa-whatsapp"></i> </a>
+        <a href="#">  <i class="fab fa-instagram"></i> </a>
+        <a href="#"><i class="fab fa-tiktok"></i> </a>
+    </div>
+    <a href="#" class="btn-box">More About Me</a>
+</div>
+</section>
+
+
+
+
+
+<script>
+    var typed = new typed
+    [
+        ".text", {
+        strings:["Frontend Developer" , "Youtube" , "web developer"],
+    typeSpeed:100,
+    backSpeed:100,
+    backDelay:1000,
+    loop:true;
+        }
+    ];
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
